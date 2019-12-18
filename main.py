@@ -15,7 +15,7 @@ def main():
         url = input('Input your url please: ')
 
         if url in urlsSet:
-            print('Url already shortened! Here it is: ' + urlsSet.get(url))
+            print('Url already shortened! Here it is: '+ 'shurl.com/' + urlsSet.get(url))
             print(' ')
         else:
             shortUrl = generateShortUrl(7)
