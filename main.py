@@ -1,18 +1,31 @@
+import random
+import string
+
 def userPrompt(text):
     return input(text)
 
 
 def generateShortUrl(length):
-    ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
+    return ''.join(random.choices(string.ascii_lowercase + string.digits,
+            k=length))
 
 
 def main():
+	
+    urlsSet = dict()
+
     while True:
-        urlsSet = dict()
+
         url = userPrompt('Input your url please: ')
-		shortUrl = generateShortUrl(7)
-		print('Your url is: ' + 'shurl.com/' + shortUrl)
-
-
+        
+        if url in urlsSet:
+            print('Url already shortened! Here it is: ' + urlsSet.get(url))
+            print(' ')
+        else:
+            shortUrl = generateShortUrl(7)
+            urlsSet[url] = shortUrl
+            print ('Your url is: ' + 'shurl.com/' + shortUrl)
+            print(' ')
+		    
 if __name__ == '__main__':
     main()
