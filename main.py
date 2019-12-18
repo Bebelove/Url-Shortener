@@ -1,9 +1,10 @@
 def userPrompt(text):
     return input(text)
-	
+
+
 def generateShortUrl(length):
-    return ''.join(
-        random.choice(string.ascii_lowercase) for i in range(length))
+    ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
+
 
 def main():
     while True:
